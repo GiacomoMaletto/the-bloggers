@@ -13,7 +13,16 @@
       <pubDate>Sat, 07 Aug 2021 15:58:24 +0200</pubDate>
       
       <guid>/posts/example/</guid>
-      <description>This is an example.</description>
+      <description>This is an example. $ \Delta x \cdot \Delta p \le \hbar $</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s a stochastic process?</title>
+      <link>/posts/stochastic-processes/</link>
+      <pubDate>Sat, 07 Aug 2021 15:58:24 +0200</pubDate>
+      
+      <guid>/posts/stochastic-processes/</guid>
+      <description>We want to define a stochastic (or random) process. We can consider the classical example in probability theory: tossing a coin. Let&amp;rsquo;s suppose that the probability of obtaining head is $p$, whereas the once of obtaining tail $ 1 - p$, as a consequence. Well, let&amp;rsquo;s think of tossing the coin more and more times in a succession of independent trials. We can model each trial as a Bernoulli random variable.</description>
     </item>
     
   </channel>

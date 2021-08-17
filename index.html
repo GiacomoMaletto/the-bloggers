@@ -17,6 +17,29 @@
 <link rel="canonical" href="./">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 <body>
 <section class="section">
@@ -51,7 +74,23 @@
       <h2 class="subtitle is-6 date">August 7, 2021</h2>
       <h1 class="title"><a href="./posts/example/">Example</a></h1>
       <div class="content">
-        This is an example.
+        This is an example. $ \Delta x \cdot \Delta p \le \hbar $
+        
+      </div>
+    </article>
+    
+    <article>
+      <div class="subtitle tags is-6 is-pulled-right">
+        
+      </div>
+      <h2 class="subtitle is-6 date">August 7, 2021</h2>
+      <h1 class="title"><a href="./posts/stochastic-processes/">What&#39;s a stochastic process?</a></h1>
+      <div class="content">
+        We want to define a stochastic (or random) process. We can consider the classical example in probability theory: tossing a coin. Let&rsquo;s suppose that the probability of obtaining head is $p$, whereas the once of obtaining tail $ 1 - p$, as a consequence. Well, let&rsquo;s think of tossing the coin more and more times in a succession of independent trials. We can model each trial as a Bernoulli random variable.
+        
+        <a class="button is-link" href="./posts/stochastic-processes/" style="height:28px">
+          Read more
+        </a>
         
       </div>
     </article>

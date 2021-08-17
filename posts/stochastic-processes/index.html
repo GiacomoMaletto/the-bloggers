@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>What&#39;s a stochastic process? | My New Hugo Site</title>
+
+
+
+<link rel="stylesheet" href="../../css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="../../posts/stochastic-processes/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="">
+          <h1 id="nav-heading" class="title is-4">My New Hugo Site</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="../../js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">August 7, 2021</h2>
+    <h1 class="title">What&#39;s a stochastic process?</h1>
+    
+    <div class="content">
+      <p>We want to define a stochastic (or random) process. We can consider the classical example in probability theory: tossing a coin. Let&rsquo;s suppose that the probability of obtaining head is $p$, whereas the once of obtaining tail $ 1 - p$, as a consequence. Well, let&rsquo;s think of tossing the coin more and more times in a succession of independent trials. We can model each trial as a Bernoulli random variable. But if we want to model the all succession, we need a new mathematical object: a random process. So we have just examined the first example of discrete-time random process. It looks like a succession of independent and identically distributed random variables, but we mustn&rsquo;t fall into the following trap: a stochastic process is much more general than thus, in fact the time is not necessarily discrete, and the variabiles don&rsquo;t have to be independent.</p>
+<p>Before giving the definition let&rsquo;s do another example, in which the time is not discrete. Let&rsquo;s suppose to count the number of customers who are queuing in front of a server at the post office. So the number of customers at the istant $t$ is random, and we call it $X(t)$. Then if we consider a bounded interval of time $[a,b]$ then we $X(t)$ is a random variable for all $x \in [a,b]$. Therefore the collection of random variables $\{X(t), t \in [a,b]\}$ is a continous-time random process.</p>
+<p>Now, we want to give a general definitios. It&rsquo;s clear that we are talking about random variables, so we need a probability space $(\Omega, \Im, \mathbb{P})$, where $\Im$ is a $\sigma$-algebra on $\Omega$ and $\mathbb{P}$ is a probability measure. In the first example we can see that we have a random variable for each $n \in \mathbb{N}$. So we could say that a discrete random variable is a function $X: \Omega \times \mathbb{N} \to K $ so that $X(\cdot, n) \to K $ is measurable function for each $n$, where $\Omega$ is probability space and $K$ is the codomain of each random variable. But this defintion doesn&rsquo;t include the second example.</p>
+<p>The following is one of the best definitions of random process, according to me. But I point out that it&rsquo;s not tha most general as possible, because it doesn&rsquo;t contemplate the circumstance that the random variables are not defined on the same probability space. But it&rsquo;s also important to underline that this eventuality is not so important for applications.</p>
+<p>Definition (Stochastic process):</p>
+<p>Let $(\Omega, \Im, \mathbb{P})$ be a probability space. Let $K$ be a set, called index set, and $S$ a measurable space, called state space. Then the function $X: \Omega \times K \to S $ is called $S$-valued random process if and only if $X(\cdot, k)$ is measurable for each $k \in K$.</p>
+<p>We could say that a $S$-valued stochastic process is a collection of $S$-valued random variables. So it&rsquo;s a collection $\{X(t), t \in K\}$ indexed by $K$. Now, if $K$ is at the most countable, I have a dicrete-time process, otherwise a continous-time one. Then, if $S$ is at the most countable, I have a discrete space process, otherwise a continous-space one.</p>
+<p>Now, we have just given the definition of stochastic process. Then they can have particular properties: being markovian or semi-markovian, for example, or being couting processes. But how can we take advantage of them? Fisrt of all, the most of the random experiences are not isolated events, but collections of them (let&rsquo;s think of a particle moving in a fluid, or of the price of a stock&rsquo;s share); so a random process is the best model for some real situations. Then, thanks to limit theorems, stochastics processes usually have limit behaviours, which can be interpreted as the expected outcome of a random phenomenon. I&rsquo;ll give same examples of these, for example by showing the solution of tha gambler&rsquo;s ruin problem.</p>
+<p>See you soon next time!</p>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+
